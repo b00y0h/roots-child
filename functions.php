@@ -11,7 +11,7 @@ if ( STYLESHEETPATH == TEMPLATEPATH ) {
 	define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/admin/');
 	define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/admin/');
 } else {
-	define('OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/admin . '/admin/admin/');
+	define('OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/admin/admin/');
 	define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('stylesheet_directory') . '/admin/admin/');
 }
 require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
