@@ -22,7 +22,6 @@ function init() {
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js');
     wp_enqueue_script( 'jquery' );
-wp_enqueue_style('ccmech', get_bloginfo('template_directory').'/css/ccmech.css', false, 1.0, 'all');
 }
 add_action('init','init');
 
@@ -52,3 +51,14 @@ function of_options_output_css() { ?>
 <?php }
 
 add_action('wp_head', 'of_options_output_css');
+
+
+/* 
+ * Turns off the default options panel from Twenty Eleven
+ */
+ 
+add_action('after_setup_theme','remove_twentyeleven_options', 100);
+
+function remove_twentyeleven_options() {
+	remove_action( 'admin_menu', 'twentyeleven_theme_options_add_page' );
+}
