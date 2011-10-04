@@ -11,22 +11,20 @@ if ( STYLESHEETPATH == TEMPLATEPATH ) {
 	define('OPTIONS_FRAMEWORK_URL', TEMPLATEPATH . '/admin/');
 	define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/');
 } else {
-	define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/admin/admin/');
+	define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/admin/');
 	define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('stylesheet_directory') . '/admin/');
 }
-
 require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
-
 }
 
 
-function cc_init() {
+function init() {
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js');
     wp_enqueue_script( 'jquery' );
 wp_enqueue_style('ccmech', get_bloginfo('template_directory').'/css/ccmech.css', false, 1.0, 'all');
 }
-add_action('init','cc_init');
+add_action('init','init');
 
 function in_my_foot(){
     ?>
